@@ -12,11 +12,11 @@ if [ -f "/scripts/logs/pull.lock" ]; then
 else
   echo "设定远程仓库地址..."
   cd /scripts
-  git remote set-url origin "$REPO_URL"
+#   git remote set-url origin "$REPO_URL"
   git reset --hard
   echo "git pull拉取最新代码..."
   echo "$REPO_URL"
-  git pull --rebase
+  git pull
   echo "npm install 安装最新依赖"
   npm install --prefix /scripts
 fi
